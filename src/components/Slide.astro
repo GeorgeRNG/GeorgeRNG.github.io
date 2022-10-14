@@ -1,0 +1,19 @@
+---
+export interface Props {
+    background: string;
+}
+
+const { background } = Astro.props;
+---
+
+<section>
+    <slot />
+</section>
+
+<style define:vars={{background}}>
+    section {
+        background: var(--background);
+        width: 100vw;
+        min-height: 100vh;
+    }
+</style>
