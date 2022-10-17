@@ -11,7 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^1.0.2",
     "astro": "^1.5.0",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "svelte": "^3.52.0"
   }
 }

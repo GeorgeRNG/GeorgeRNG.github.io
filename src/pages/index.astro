@@ -1,13 +1,24 @@
 ---
 import Slide from "../components/Slide.astro";
 import Layout from "../layouts/Layout.astro";
+
+import Type from "../components/Type.svelte";
 ---
 
 <Layout title="GeorgeRNG">
     <main>
-        <Slide background="linear-gradient(158deg, rgba(255,165,0,1) 0%, rgba(150,50,0,1) 100%)">
-            <small>Oh uuh... I'm</small>
-            <h1>GeorgeRNG</h1>
-        </Slide>
+        <div class="slide1">
+            <Slide background="linear-gradient(158deg, rgba(255,165,0,1) 0%, rgba(150,50,0,1) 100%)">
+                <small>Oh uuh... I'm</small>
+                <h1><Type text="GeorgeRNG" /></h1>
+            </Slide>
+        </div>
     </main>
 </Layout>
+
+<style>
+    .slide1 {
+        color: #000000;
+        font-size: xx-large;
+    }
+</style>
