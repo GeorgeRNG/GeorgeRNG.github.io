@@ -12,8 +12,9 @@ const { background } = Astro.props;
 
 <style define:vars={{background}}>
     section {
+        display: flex;
+        flex-direction: column;
         background: var(--background);
-        width: 100vw;
         min-height: 100vh;
     }
 </style>

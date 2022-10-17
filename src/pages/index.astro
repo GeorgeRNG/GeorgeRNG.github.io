@@ -7,18 +7,62 @@ import Type from "../components/Type.svelte";
 
 <Layout title="GeorgeRNG">
     <main>
-        <div class="slide1">
-            <Slide background="linear-gradient(158deg, rgba(255,165,0,1) 0%, rgba(150,50,0,1) 100%)">
-                <small>Oh uuh... I'm</small>
-                <h1><Type text="GeorgeRNG" /></h1>
+        <Slide background="linear-gradient(158deg, rgba(255,165,0,1) 0%, rgba(150,50,0,1) 90%)">
+            <div class="slide-1">
+                <div class="center">
+                    <small>Hi there. I'm</small>
+                    <h1><Type text="GeorgeRNG" speed={200} /></h1>
+                </div>
+                <div class="text-wrapper">
+                    <p>I code stuff, scroll down to see if if you want to</p>
+                </div>
+            </div>
             </Slide>
-        </div>
     </main>
 </Layout>
 
-<style>
-    .slide1 {
+<style lang="scss">
+    @keyframes expand {
+        from {
+            height: 0em;
+        }
+        to {
+            height: 1em;
+        }
+    }
+
+    .slide-1 {
         color: #000000;
         font-size: xx-large;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .center {
+            margin: auto;
+            text-align: center;
+        }
+
+        .text-wrapper {
+            display: inline-grid;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            font-size: 75%;
+            animation: expand 100ms forwards ease-out 2200ms;
+            
+            p {
+                // TODO: Center this
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                align-self: center;
+            }
+        }
+    }
+
+    h1 {
+
     }
 </style>

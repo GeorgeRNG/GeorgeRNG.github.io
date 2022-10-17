@@ -1,5 +1,6 @@
 <script lang="ts">
     export let text : string;
+    export let speed : number;
     let x = 0;
 
     const letters = text.split('');
@@ -7,7 +8,7 @@
 
 <span>
     {#each letters as letter}
-        <span class="letter" style={`--time: ${x = x + 250}ms`}>{letter}</span>
+        <span class="letter" style={`--time: ${x = x + speed}ms`}>{letter}</span>
     {/each}
     <div class="cursor"></div>
 </span>
@@ -42,6 +43,6 @@
         margin-left: 0.1em;
         margin-top: 0.8em;
         animation: blinker 1000ms step-start infinite;
-        outline: 0.1px solid gray;
+        outline: 0.1px solid #333e;
     }
 </style>
