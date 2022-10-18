@@ -11,7 +11,7 @@ import Type from "../components/Type.svelte";
             <div class="slide-1">
                 <div class="center">
                     <small>Hi there. I'm</small>
-                    <h1><Type text="GeorgeRNG" speed={200} /></h1>
+                    <h1><Type text="GeorgeRNG" speed={400} /></h1>
                 </div>
                 <div class="text-wrapper">
                     <p>I code stuff, scroll down to see if if you want to</p>
@@ -24,10 +24,10 @@ import Type from "../components/Type.svelte";
 <style lang="scss">
     @keyframes expand {
         from {
-            height: 0em;
+            background-position-x: -100vw;
         }
         to {
-            height: 1em;
+            background-position-x: 0vw;
         }
     }
 
@@ -37,6 +37,8 @@ import Type from "../components/Type.svelte";
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin: auto;
+        margin-top: 25vh;
 
         .center {
             margin: auto;
@@ -44,27 +46,23 @@ import Type from "../components/Type.svelte";
         }
 
         .text-wrapper {
-            display: inline-grid;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            font-size: 75%;
-            animation: expand 100ms forwards ease-out 2200ms;
+            font-size: large;
+            display: flex;
+
+            background: rgb(5,0,74);
+            background: linear-gradient(90deg, rgba(5,0,74,1) 0%, rgba(7,5,101,1) 58%, rgba(15,15,180,1) 80%, rgba(9,9,121,0) 100%); 
+
+            background-clip: text;
+            background-repeat: no-repeat;
+            background-position-x: -100vw;
+            
+            animation: expand 1000ms forwards linear 2200ms;
             
             p {
-                // TODO: Center this
-                position: absolute;
-                bottom: 0;
-                margin: 0;
-                left: 50%;
-                translate: -50%;
-                align-self: center;
+                margin: auto;
+                color: transparent;
+                width: fit-content;
             }
         }
-    }
-
-    h1 {
-
     }
 </style>
