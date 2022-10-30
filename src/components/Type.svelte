@@ -42,7 +42,7 @@
         height: 0.2em;
         margin-left: 0.1em;
         margin-top: 0.8em;
-        animation: blinker 1000ms step-start infinite;
+        animation: blinker calc(530ms*2) step-start infinite;
         outline: 0.1px solid #333e;
     }
 </style>

@@ -56,13 +56,26 @@ import Type from "../components/Type.svelte";
             background-repeat: no-repeat;
             background-position-x: -100vw;
             
-            animation: expand 1000ms forwards linear 2200ms;
+            animation: expand 2000ms forwards linear 1000ms;
             
             p {
                 margin: auto;
                 color: transparent;
                 width: fit-content;
+                border-radius: 1em;
+
+                box-shadow: 
+                    0px calc(1em + 0.1em) 0px -1px #71f79f,
+                    0px calc(2em + 0.1em) 0px -1px #1fb7c7,
+                    0px calc(3em + 0.1em) 0px -1px #0e6ba8,
+                    0px calc(4em + 0.1em) 0px -1px #330036,
+                    0px calc(5em + 0.1em) 0px -1px #210124,
+                ;
             }
         }
+    }
+
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
     }
 </style>
