@@ -11,23 +11,58 @@ import Type from "../components/Type.svelte";
             <div class="slide-1">
                 <div class="center">
                     <small>Hi there. I'm</small>
-                    <h1><Type text="GeorgeRNG" speed={400} /></h1>
+                    <h1><Type text="GeorgeRNG" speed={200} /></h1>
                 </div>
                 <div class="text-wrapper">
-                    <p>I code stuff, scroll down to see if if you want to</p>
+                    <p><span class="scroll">Scroll</span><span class="swipe">Swipe</span> down to see what I do.</p>
                 </div>
             </div>
-            </Slide>
+            <div class="pattern">
+
+            </div>
+        </Slide>
+        <Slide background="#000">
+            <div class="slide-2">
+                <h2>What do I make stuff with?</h2>
+            </div>
+        </Slide>
     </main>
 </Layout>
 
 <style lang="scss">
+    .swipe {
+        display: none;
+    }
+    @media (pointer: coarse) {
+        .scroll {
+            display: none;
+        }
+        .swipe {
+            display: inline;
+        }
+    }
+
     @keyframes expand {
         from {
-            background-position-x: -100vw;
+            background-position-x: 100vw;
         }
         to {
             background-position-x: 0vw;
+        }
+    }
+
+    @keyframes shadows {
+        from {
+            box-shadow: none;
+        }
+        to {
+            box-shadow: 
+                0px calc(-10px * 0) 0px 10px #71f79f,
+                0px calc(-10px * 1) 0px 10px #1fb7c7,
+                0px calc(-10px * 2) 0px 10px #0e6ba8,
+                0px calc(-10px * 3) 0px 10px #330036,
+                0px calc(-10px * 4) 0px 10px #210124,
+            ;
         }
     }
 
@@ -37,6 +72,7 @@ import Type from "../components/Type.svelte";
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 100%;
         margin: auto;
         margin-top: 25vh;
 
@@ -50,7 +86,7 @@ import Type from "../components/Type.svelte";
             display: flex;
 
             background: rgb(5,0,74);
-            background: linear-gradient(90deg, rgba(5,0,74,1) 0%, rgba(7,5,101,1) 58%, rgba(15,15,180,1) 80%, rgba(9,9,121,0) 100%); 
+            background: linear-gradient(270deg, rgba(5,0,74,1) 0%, rgba(7,5,101,1) 58%, rgba(15,15,180,1) 95%, rgba(9,9,121,0) 100%); 
 
             background-clip: text;
             background-repeat: no-repeat;
@@ -62,17 +98,22 @@ import Type from "../components/Type.svelte";
                 margin: auto;
                 color: transparent;
                 width: fit-content;
-                border-radius: 1em;
-
-                box-shadow: 
-                    0px calc(1em + 0.1em) 0px -1px #71f79f,
-                    0px calc(2em + 0.1em) 0px -1px #1fb7c7,
-                    0px calc(3em + 0.1em) 0px -1px #0e6ba8,
-                    0px calc(4em + 0.1em) 0px -1px #330036,
-                    0px calc(5em + 0.1em) 0px -1px #210124,
-                ;
             }
         }
+    }
+    .slide-2 {
+        width: 100%;
+        height: 100%;
+        h2 {
+            color: #71f79f;
+            font-size: min(200%,7vw);
+            text-align: center;
+        }
+    }
+
+    .pattern {
+        width: 100%;
+        animation: shadows 2000ms forwards ease-out 1000ms;
     }
 
     h1 {
